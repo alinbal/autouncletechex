@@ -1,10 +1,11 @@
 <h1>Listing Cars</h1>
 
-<table>
+<table class="table">
   <thead>
   <tr>
     <th>Brand</th>
     <th>Year</th>
+    <th>Model</th>
     <th colspan="3"></th>
   </tr>
   </thead>
@@ -14,6 +15,7 @@
     <tr>
       <td><%= car.brand %></td>
       <td><%= car.year %></td>
+      <td><%= car.car_model_name %></td>
     </tr>
   <% end %>
   </tbody>

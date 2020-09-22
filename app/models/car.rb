@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class Car < ApplicationRecord
+  include Filterable
   scope :filter_by_brand, ->(brand) { where brand: brand }
   scope :filter_by_model, ->(model) { where car_model_name: model }
   scope :filter_by_year, ->(year) { where year: year }
