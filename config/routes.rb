@@ -6,4 +6,7 @@ Rails.application.routes.draw do
       resources :cars
     end
   end
+  namespace 'webinterface' do
+    resources :cars
+  end
 end
