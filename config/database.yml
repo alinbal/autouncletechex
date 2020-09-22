@@ -23,3 +23,11 @@ test:
 production:
   <<: *default
   database: db/production.sqlite3
+
+#adapter: postgresql
+#  pool: <%#= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+#  timeout: 5000
+#  database: d47tu0jd3rdf2a
+#  username: jiobbhyjgxszuz
+#  password: 817c583a7bfa743dee2bc85a595d14baac3493a1e2ce2ce6f4ca44b8e8d95ea3
+#  host: ec2-54-75-229-28.eu-west-1.compute.amazonaws.com
