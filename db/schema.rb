@@ -12,11 +12,14 @@
 
 ActiveRecord::Schema.define(version: 2020_09_22_163927) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "adverts", force: :cascade do |t|
     t.string "url"
-    t.integer "source_id"
+    t.bigint "source_id"
     t.string "source_name"
-    t.integer "car_id", null: false
+    t.bigint "car_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["car_id"], name: "index_adverts_on_car_id"
@@ -43,7 +46,7 @@ ActiveRecord::Schema.define(version: 2020_09_22_163927) do
   create_table "image_urls", force: :cascade do |t|
     t.string "url"
     t.boolean "is_primary_image"
-    t.integer "car_id", null: false
+    t.bigint "car_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["car_id"], name: "index_image_urls_on_car_id"
