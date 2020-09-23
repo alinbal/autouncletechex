@@ -1,5 +1,13 @@
 module Webinterface
   class CarsController < ApplicationController
+    before_action :authenticate
+
+    def authenticate
+      authenticate_or_request_with_http_basic('Administration') do |username, password|
+        username == 'admin' && password == 'AutoAuntBeta'
+      end
+    end
+
     def index
       @cars = Car.all # creates an anonymous scope
       @search = params["search"]
