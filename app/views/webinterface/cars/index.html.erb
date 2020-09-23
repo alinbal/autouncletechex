@@ -1,0 +1,37 @@
+<h1>Listing Cars</h1>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-8 offset-sm-2">
+      <h1>Cocktails</h1>
+      <hr>
+      <%= simple_form_for :search, url: '/webinterface/cars', method: "GET", html: { class: 'form-inline' } do |f| %>
+        <%= f.input :brand, input_html: {value: ""} %>
+        <%= f.input :model, input_html: {value: ""} %>
+        <%= f.input :year, input_html: {value: ""} %>
+        <%= f.submit "Search", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<table class="table">
+  <thead>
+  <tr>
+    <th>Brand</th>
+    <th>Year</th>
+    <th>Model</th>
+    <th colspan="3"></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @cars.each do |car| %>
+    <tr>
+      <td><%= car.brand %></td>
+      <td><%= car.year %></td>
+      <td><%= car.car_model_name %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
